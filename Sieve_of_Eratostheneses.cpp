@@ -55,10 +55,6 @@ void Sieve(long long num)
     }
 }
 
-void main2()
-{
-    
-}
 
 
 int main()
