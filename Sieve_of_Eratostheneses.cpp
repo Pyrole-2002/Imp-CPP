@@ -56,16 +56,36 @@ void Sieve(long long num)
 }
 
 
+/*
+In order to find the total number of factors of a number (num), there exists a theorem:
+The number of primes = (1+a1)*(1+a2)*(1+a3).....*(1+an),
+Where a1, a2, a3....., an are the counts of the distinct prime factors of num.
+*/
+
+long long Factors(long long num)
+{
+    long long nfact = 1;
+    long long quotient = num;
+    Sieve(num);
+    for (long long i = 0; i < (long long) primes.size(); i++)
+    {
+        long long a = 0;
+        while ((quotient % primes[i] == 0)&&(quotient != 1))
+        {
+            quotient /= primes[i];
+            a++;
+        }
+        nfact *= (a+1);
+    }
+
+    return nfact;
+}
 
 int main()
 {
     long long a;
     cin >> a;
-    Sieve(a);
-    for (long long i = 0; i < (int) primes.size(); i++)
-    {
-        cout << primes[i] << endl;
-    }
+    cout << Factors(a) << endl;
 
     return 0;
 }
