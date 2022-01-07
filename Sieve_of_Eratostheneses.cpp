@@ -33,7 +33,7 @@ void Sieve(long long num)
     {
         /*
         Since we start marking numbers after i*i till num,
-        i*i as to be less or equal to num.
+        i*i has to be less or equal to num.
         */
         if (numbers[i] == true)
         {
