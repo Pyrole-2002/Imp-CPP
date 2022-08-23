@@ -70,7 +70,7 @@ long long Factors(long long num)
     for (long long i = 0; i < (long long) primes.size(); i++)
     {
         long long a = 0;
-        while ((quotient % primes[i] == 0)&&(quotient != 1))
+        while ((quotient % primes[i] == 0) && (quotient != 1))
         {
             quotient /= primes[i];
             a++;
